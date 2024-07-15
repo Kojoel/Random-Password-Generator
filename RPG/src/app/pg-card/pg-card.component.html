@@ -1,1 +1,32 @@
-<p>pg-card works!</p>
+<div class="cardWrapper">
+    <p>Password Generator</p>
+    <div class="input-container">
+        <div id="generatedPw"></div>
+        <img src="../../assets/images/icon-copy.svg" alt="copy icon">
+    </div>
+    <div class="password-controls">
+        <div class="charlength">
+            <p>Character Length</p>
+            <p>10</p>
+        </div>
+        <input type="range" name="char-range" id="char-range" min="" max="" value="">
+        <div class="criterias">
+            <input type="checkbox" name="upperCaseIncluded" id="upperCaseIncluded">
+            <label for="upperCaseIncluded"></label>
+            <input type="checkbox" name="lowerCaseIncluded" id="lowerCaseIncluded">
+            <label for="lowerCaseIncluded"></label>
+            <input type="checkbox" name="numbersIncluded" id="numbersIncluded">
+            <label for="numbersIncluded"></label>
+            <input type="checkbox" name="symbolsIncluded" id="symbolsIncluded">
+            <label for="symbolsIncluded"></label>
+        </div>
+        <div class="pwStrengthCheck">
+            <p>STRENGTH</p>
+            <div class="strChecker">
+                <label for="password-strength">MEDIUM</label>
+                <input type="range" name="password-strength" id="password-strength">
+            </div>
+        </div>
+        <button>Generate <img src="../../assets/images/icon-arrow-right.svg" alt="right arrow"></button>
+    </div>
+</div>
