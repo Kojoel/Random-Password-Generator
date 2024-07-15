@@ -1,4 +1,3 @@
-
 :root{
     --body-bg : #111016;
     --card-bg : #24232b;
@@ -10,9 +9,164 @@
     --text-fade: #7b7986;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.cardWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
 }
 
+.cardWrapper p{
+    color: var(--text-fade);
+    margin-bottom: 1.5rem;
+}
+
+.input-container{
+    width: 100%;
+    height: 4rem;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-container #generatedPw{
+    color: var(--text-color);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.password-controls {
+    background: var(--card-bg);
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+.password-controls .charlength{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background: red;
+    height: 2rem;
+}
+
+.password-controls .charlength p:first-child {
+    color: var(--text-color);
+}
+.password-controls .charlength p:last-child {
+    color: var(--light-green);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.password-controls #char-range {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: var(--strenth-check-bg);
+    margin: 1rem 0 1.5rem 0;
+}
+
+.password-controls #char-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--slider-thumb);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+// .password-controls #char-range::-webkit-slider-thumb {
+//     width: 20px;
+//     height: 20px;
+//     background: var(--slider-thumb);
+//     cursor: pointer;
+//     border-radius: 50%;
+//     border: none;
+//     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+// }
+
+.password-controls #char-range::-webkit-slider-runnable-track {
+    background: var(--light-green);
+}
+.password-controls #char-range::-moz-range-track {
+    background: var(--light-green);
+}
+
+
+.password-controls .criterias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.password-controls .criterias .firstcheck,
+.password-controls .criterias .secondcheck,
+.password-controls .criterias .thirdcheck,
+.password-controls .criterias .fourthcheck {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.password-controls .criterias .firstcheck input,
+.password-controls .criterias .secondcheck input,
+.password-controls .criterias .thirdcheck input,
+.password-controls .criterias .fourthcheck input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--light-green);
+}
+
+
+.password-controls .pwStrengthCheck {
+    width: 100%;
+    height: 3rem;
+    background: var(--strenth-check-bg);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.password-controls .pwStrengthCheck p{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+.password-controls .pwStrengthCheck .strChecker{
+    display: flex;
+    width: 40%;
+    // background: red;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.password-controls .pwStrengthCheck .strChecker label{
+    font-size: 20px;
+    color: var(--text-color);
+}
+.password-controls .pwStrengthCheck .strChecker input{
+    display: flex;
+    width: 4rem;
+}
+
+
+
+
+.password-controls button {
+    width: 100%;
+    height: 3.5rem;
+    background: var(--light-green);
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    font-size: 17px;
+}

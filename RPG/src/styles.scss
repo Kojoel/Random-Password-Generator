@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --body-bg : #111016;
+    --card-bg : #24232b;
+    --light-green: #a4ffaf;
+    --slider-thumb: #e6e5ed;
+    --strenth-check-bg: #18171f;
+    --strength-check-range: #facf67;
+    --text-color: #efeef4;
+    --text-fade: #7b7986;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--body-bg);
+    font-family: "JetBrains Mono", monospace;
+    color: white;
+    display: flex;
+    justify-content: center;
+}

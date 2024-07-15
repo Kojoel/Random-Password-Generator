@@ -1,7 +1,7 @@
 <div class="cardWrapper">
     <p>Password Generator</p>
     <div class="input-container">
-        <div id="generatedPw"></div>
+        <div id="generatedPw">EX823JSDA</div>
         <img src="../../assets/images/icon-copy.svg" alt="copy icon">
     </div>
     <div class="password-controls">
@@ -9,16 +9,24 @@
             <p>Character Length</p>
             <p>10</p>
         </div>
-        <input type="range" name="char-range" id="char-range" min="" max="" value="">
+        <input type="range" name="char-range" id="char-range" min="0" max="20" value="10">
         <div class="criterias">
-            <input type="checkbox" name="upperCaseIncluded" id="upperCaseIncluded">
-            <label for="upperCaseIncluded"></label>
-            <input type="checkbox" name="lowerCaseIncluded" id="lowerCaseIncluded">
-            <label for="lowerCaseIncluded"></label>
-            <input type="checkbox" name="numbersIncluded" id="numbersIncluded">
-            <label for="numbersIncluded"></label>
-            <input type="checkbox" name="symbolsIncluded" id="symbolsIncluded">
-            <label for="symbolsIncluded"></label>
+            <div class="firstcheck">
+                <input type="checkbox" name="upperCaseIncluded" id="upperCaseIncluded">
+                <label for="upperCaseIncluded">Include Uppercase Letters</label>
+            </div>
+            <div class="secondcheck">
+                <input type="checkbox" name="lowerCaseIncluded" id="lowerCaseIncluded">
+                <label for="lowerCaseIncluded">Include Lowercase Letters</label>
+            </div>
+            <div class="thirdcheck">
+                <input type="checkbox" name="numbersIncluded" id="numbersIncluded">
+                <label for="numbersIncluded">Include Numbers</label>
+            </div>
+            <div class="fourthcheck">
+                <input type="checkbox" name="symbolsIncluded" id="symbolsIncluded">
+                <label for="symbolsIncluded">Include Symbols</label>
+            </div>
         </div>
         <div class="pwStrengthCheck">
             <p>STRENGTH</p>
@@ -27,6 +35,6 @@
                 <input type="range" name="password-strength" id="password-strength">
             </div>
         </div>
-        <button>Generate <img src="../../assets/images/icon-arrow-right.svg" alt="right arrow"></button>
+        <button>GENERATE<img src="../../assets/images/icon-arrow-right.svg" alt="right arrow"></button>
     </div>
 </div>

@@ -5,7 +5,7 @@ import { PgCardComponent } from './pg-card/pg-card.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [PgCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
