@@ -14,7 +14,7 @@ export class PgCardComponent {
   private readonly digitChars = '0123456789';
   private readonly specialChars = '!@#$%^&*()-_=+[{]}\\|;:\'",<.>/?';
 
-  generatedPw: string = "SEL23X832";
+  generatedPw: string = "";
   charLength: number = 10;
   progressBar: number = 10;
   passwordStrength: string = '';
@@ -22,6 +22,7 @@ export class PgCardComponent {
   lowerCaseIncluded: boolean = true;
   numbersIncluded: boolean = true;
   symbolsIncluded: boolean = false;
+  isActive : boolean = true;
 
   generatePassword(): string {
     let charSet = '';
@@ -49,8 +50,7 @@ export class PgCardComponent {
     const hasLowercase = /[a-z]/.test(password);
     const hasUppercase = /[A-Z]/.test(password);
     const hasDigits = /\d/.test(password);
-    const hasSpecialChars = /[!@#$%^&*()\-=+[{\]}\\|;:'",<.>\/?]/.test(password)
-    // console.log(hasLowercase)
+    const hasSpecialChars = /[!@#$%^&*()\-=+[{\]}\\|;:'",<.>\/?]/.test(password);
 
     const typesCount = [hasLowercase, hasUppercase, hasDigits, hasSpecialChars].filter(Boolean).length;
 
@@ -67,6 +67,24 @@ export class PgCardComponent {
       this.passwordStrength = 'Strong';
     }
     else this.passwordStrength = 'Medium';
+  }
+
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      console.log('Text copied to clipboard');
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
+  }
+
+  toggleNotice(): void {
+    const copiedNotice = document.querySelector('.copied-notice');
+      copiedNotice?.classList.toggle('active');
+  }
+
+  hideNotice(): void {
+    const copiedNotice = document.querySelector('.copied-notice');
+    copiedNotice?.classList.remove('active');
   }
 
 }
