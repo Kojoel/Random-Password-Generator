@@ -7,6 +7,9 @@
     --strength-check-range: #facf67;
     --text-color: #efeef4;
     --text-fade: #7b7986;
+    --dark-orange: #f64a4a;
+    --light-orange: #fb7c58;
+    --light-yellow: #f8cd65;
 }
 
 .cardWrapper{
@@ -268,7 +271,6 @@
     height: 28px;
     border: 2px solid var(--text-color);
 }
-
 
 .password-controls button {
     width: 100%;

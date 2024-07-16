@@ -53,15 +53,20 @@ export class PgCardComponent {
     // console.log(hasLowercase)
 
     const typesCount = [hasLowercase, hasUppercase, hasDigits, hasSpecialChars].filter(Boolean).length;
-    console.log("typescount:", typesCount);
-    console.log("password length:", password.length);
 
-    if(password.length < 8) this.passwordStrength = 'Too Weak';
-    else if(password.length >= 8 && typesCount === 1) this.passwordStrength = 'Weak';
-    else if(password.length >= 8 && password.length <12 && typesCount >= 2) this.passwordStrength = 'Medium';
-    else if(password.length >= 12 && typesCount >= 3) this.passwordStrength = 'Strong';
-    // else this.passwordStrength = 'Medium';
-    
+    if(password.length < 8) {
+      this.passwordStrength = 'Too Weak';
+    }
+    else if(password.length >= 8 && typesCount === 1) {
+      this.passwordStrength = 'Weak';
+    }
+    else if(password.length >= 8 && password.length <12 && typesCount >= 2) {
+      this.passwordStrength = 'Medium';
+    }
+    else if(password.length >= 12 && typesCount >= 3) {
+      this.passwordStrength = 'Strong';
+    }
+    else this.passwordStrength = 'Medium';
   }
 
 }

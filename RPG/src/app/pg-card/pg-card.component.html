@@ -33,10 +33,36 @@
             <div class="strChecker">
                 <p>{{ passwordStrength }}</p>
                 <div class="strengthbars">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                    @if(passwordStrength === 'Too Weak'){
+                        <div class="bar" style="background: #f64a4a; border-color: #f64a4a;"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    }
+                </div>
+                <div class="strengthbars">
+                    @if(passwordStrength === 'Weak'){
+                        <div class="bar" style="background: #fb7c58; border-color: #fb7c58;"></div>
+                        <div class="bar" style="background: #fb7c58; border-color: #fb7c58;"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    }
+                </div>
+                <div class="strengthbars">
+                    @if(passwordStrength === 'Medium'){
+                        <div class="bar" style="background: #f8cd65; border-color: #f8cd65;"></div>
+                        <div class="bar" style="background: #f8cd65; border-color: #f8cd65;"></div>
+                        <div class="bar" style="background: #f8cd65; border-color: #f8cd65;"></div>
+                        <div class="bar"></div>
+                    }
+                </div>
+                <div class="strengthbars">
+                    @if(passwordStrength === 'Strong'){
+                        <div class="bar" style="background: #a4ffaf; border-color: #a4ffaf;"></div>
+                        <div class="bar" style="background: #a4ffaf; border-color: #a4ffaf;"></div>
+                        <div class="bar" style="background: #a4ffaf; border-color: #a4ffaf;"></div>
+                        <div class="bar" style="background: #a4ffaf; border-color: #a4ffaf;"></div>
+                    }
                 </div>
             </div>
         </div>
