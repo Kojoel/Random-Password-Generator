@@ -42,6 +42,11 @@
     font-weight: 500;
 }
 
+.copyIcon {
+    width: 21px;
+    height: 24px;
+}
+
 .password-controls {
     background: var(--card-bg);
     padding: 2rem 1.5rem;
@@ -275,9 +280,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     cursor: pointer;
     border: 2px solid var(--light-green);
+}
+.password-controls svg {
+    width: 11px;
+    height: 12x;
 }
 
 .password-controls button:hover{
@@ -293,6 +302,11 @@
 
     .cardWrapper p{
         font-size: 17px;
+    }
+
+    .copyIcon {
+        width: 17.5px;
+        height: 20px;
     }
 
     .password-controls .charlength p:first-child {
