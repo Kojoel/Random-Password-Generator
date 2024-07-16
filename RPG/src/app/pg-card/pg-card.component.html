@@ -12,19 +12,19 @@
         <input class="progressBar" type="range" name="char-range" id="char-range" min="0" max="20" [(ngModel)]="charLength" autocomplete="off">
         <div class="criterias">
             <div class="firstcheck">
-                <input type="checkbox" name="upperCaseIncluded" id="upperCaseIncluded">
+                <input type="checkbox" name="upperCaseIncluded" [(ngModel)]="upperCaseIncluded">
                 <label for="upperCaseIncluded">Include Uppercase Letters</label>
             </div>
             <div class="secondcheck">
-                <input type="checkbox" name="lowerCaseIncluded" id="lowerCaseIncluded">
+                <input type="checkbox" name="lowerCaseIncluded" [(ngModel)]="lowerCaseIncluded">
                 <label for="lowerCaseIncluded">Include Lowercase Letters</label>
             </div>
             <div class="thirdcheck">
-                <input type="checkbox" name="numbersIncluded" id="numbersIncluded">
+                <input type="checkbox" name="numbersIncluded" [(ngModel)]="numbersIncluded">
                 <label for="numbersIncluded">Include Numbers</label>
             </div>
             <div class="fourthcheck">
-                <input type="checkbox" name="symbolsIncluded" id="symbolsIncluded">
+                <input type="checkbox" name="symbolsIncluded" [(ngModel)]="symbolsIncluded">
                 <label for="symbolsIncluded">Include Symbols</label>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <button>GENERATE<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 15"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+        <button (click)="generatePassword()">GENERATE<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 15"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
         </button>
     </div>
 </div>
