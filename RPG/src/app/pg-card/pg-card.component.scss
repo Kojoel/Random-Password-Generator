@@ -105,73 +105,66 @@
 }
 
 .password-controls #char-range {
-    width: 100%;
-    height: 6px;
     -webkit-appearance: none;
     appearance: none;
-    background: var(--strenth-check-bg);
-    background-image: linear-gradient(var(--light-green), var(--light-green));
-    background-size: 50%, 100%;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 6px;
     margin: 1rem 0 1.5rem 0;
+    background: var(--body-bg)
 }
 
-/////////// FOR CHROME BROWSWER ///////////////
-.password-controls #char-range::-webkit-slider-thumb{
-    -webkit-appearnace: none;
-    height: 20px;
-    width: 20px;
-    border: 2px solid var(--slider-thumb);
-    border-radius: 50%;
-    background: var(--slider-thumb);
-    cursor: pointer;
-}
-
-.password-controls #char-range::-webkit-slider-thumb:hover{
-    border: 2px solid var(--light-green);
-    background: var(--body-bg);
-}
-
-.password-controls #char-range::-webkit-slider-runnable-track{
-    -webkit-appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-}
-
-/////////// FOR MOZILLA BROWSWER ///////////////
-.password-controls #char-range::-moz-range-thumb {
-    -webkit-appearnace: none;
-    height: 20px;
-    width: 20px;
-    border: 2px solid var(--slider-thumb);
-    border-radius: 50%;
-    background: var(--slider-thumb);
-    cursor: pointer;
-}
-
-.password-controls #char-range::-moz-range-thumb:hover {
-    border: 2px solid var(--light-green);
-    background: var(--body-bg);
-}
-
+////////////////////FOR MOZILLA //////////////////////
 .password-controls #char-range::-moz-range-progress {
     -webkit-appearance: none;
     appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
+    height: 6px;
+    background: var(--light-green);
+}
+.password-controls #char-range::-moz-range-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0px;
+    background: transprent;
+}
+.password-controls #char-range::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--slider-thumb);
+    background: var(--slider-thumb);
+    cursor: pointer;
+}
+.password-controls #char-range::-moz-range-thumb:hover{
+    background: var(--body-bg);
+    border: 2px solid var(--light-green);
+
 }
 
-// .password-controls #char-range::-webkit-slider-thumb {
-//     width: 20px;
-//     height: 20px;
-//     background: var(--slider-thumb);
-//     cursor: pointer;
-//     border-radius: 50%;
-//     border: none;
-//     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-// }
+////////////////////FOR CHROME //////////////////////
+.password-controls #char-range::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0px;
+    background: red;
+}
+.password-controls #char-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--slider-thumb);
+    cursor: pointer;
+    position: relative;
+    top: -.6rem;
+}
+.password-controls #char-range::-webkit-slider-thumb:hover {
+    border:2px solid var(--light-green);
+    background: var(--body-bg);
+}
+
 
 .password-controls #char-range::-webkit-slider-runnable-track {
     background: var(--light-green);
