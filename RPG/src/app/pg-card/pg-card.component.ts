@@ -17,12 +17,13 @@ export class PgCardComponent {
   generatedPw: string = "SEL23X832";
   charLength: number = 10;
   progressBar: number = 10;
+  passwordStrength: string = '';
   upperCaseIncluded: boolean = true;
   lowerCaseIncluded: boolean = true;
   numbersIncluded: boolean = true;
   symbolsIncluded: boolean = false;
 
-  generatePassword(): void {
+  generatePassword(): string {
     let charSet = '';
     if (this.upperCaseIncluded) charSet += this.uppercaseChars;
     if (this.lowerCaseIncluded) charSet += this.lowercaseChars;
@@ -39,32 +40,28 @@ export class PgCardComponent {
       password += charSet[randomIndex];
     }
     this.generatedPw = password;
-    // return password;
+
+    return password;
   }
 
-
-  ratePasswordStrength(password: string): string {
+  ratePasswordStrength(): void {
+    let password = this.generatePassword();
     const hasLowercase = /[a-z]/.test(password);
     const hasUppercase = /[A-Z]/.test(password);
     const hasDigits = /\d/.test(password);
-    const hasSpecialChars = /[!@#$%^&*()-_=+[{]}\\\|;:\'\",<.>\/\?]/.test(password);
+    const hasSpecialChars = /[!@#$%^&*()\-=+[{\]}\\|;:'",<.>\/?]/.test(password)
+    // console.log(hasLowercase)
 
     const typesCount = [hasLowercase, hasUppercase, hasDigits, hasSpecialChars].filter(Boolean).length;
+    console.log("typescount:", typesCount);
+    console.log("password length:", password.length);
 
-    if (password.length < 8) {
-      return 'Too Weak';
-    } else if (password.length >= 8 && typesCount === 1) {
-      return 'Weak';
-    } else if (password.length >= 8 && typesCount >= 2) {
-      return 'Medium';
-    } else if (password.length >= 12 && typesCount >= 3) {
-      return 'Strong';
-    } else {
-      return 'Medium'; // Default to Medium if none of the above conditions are met
-    }
+    if(password.length < 8) this.passwordStrength = 'Too Weak';
+    else if(password.length >= 8 && typesCount === 1) this.passwordStrength = 'Weak';
+    else if(password.length >= 8 && password.length <12 && typesCount >= 2) this.passwordStrength = 'Medium';
+    else if(password.length >= 12 && typesCount >= 3) this.passwordStrength = 'Strong';
+    // else this.passwordStrength = 'Medium';
+    
   }
-
-  
-  
 
 }
