@@ -9,7 +9,7 @@
             <p>Character Length</p>
             <p>10</p>
         </div>
-        <input type="range" name="char-range" id="char-range" min="0" max="20" value="10">
+        <input type="range" name="char-range" id="char-range" min="0" max="30" value="15" autocomplete="off">
         <div class="criterias">
             <div class="firstcheck">
                 <input type="checkbox" name="upperCaseIncluded" id="upperCaseIncluded">
@@ -31,8 +31,13 @@
         <div class="pwStrengthCheck">
             <p>STRENGTH</p>
             <div class="strChecker">
-                <label for="password-strength">MEDIUM</label>
-                <input type="range" name="password-strength" id="password-strength">
+                <p>MEDIUM</p>
+                <div class="strengthbars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
         </div>
         <button>GENERATE<img src="../../assets/images/icon-arrow-right.svg" alt="right arrow"></button>

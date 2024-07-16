@@ -12,11 +12,10 @@
 .cardWrapper{
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+    width: 33rem;
 }
 
 .cardWrapper p{
@@ -26,7 +25,7 @@
 
 .input-container{
     width: 100%;
-    height: 4rem;
+    height: 5rem;
     background: var(--card-bg);
     display: flex;
     justify-content: space-between;
@@ -37,7 +36,7 @@
 
 .input-container #generatedPw{
     color: var(--text-color);
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
 }
 
@@ -57,30 +56,73 @@
 
 .password-controls .charlength p:first-child {
     color: var(--text-color);
+    font-size: 18px;
 }
 .password-controls .charlength p:last-child {
     color: var(--light-green);
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .password-controls #char-range {
     width: 100%;
     height: 6px;
     -webkit-appearance: none;
+    appearance: none;
     background: var(--strenth-check-bg);
+    background-image: linear-gradient(var(--light-green), var(--light-green));
+    background-size: 50%, 100%;
+    background-repeat: no-repeat;
     margin: 1rem 0 1.5rem 0;
 }
 
-.password-controls #char-range::-moz-range-thumb {
-    width: 20px;
+/////////// FOR CHROME BROWSWER ///////////////
+.password-controls #char-range::-webkit-slider-thumb{
+    -webkit-appearnace: none;
     height: 20px;
+    width: 20px;
+    border: 2px solid var(--slider-thumb);
+    border-radius: 50%;
     background: var(--slider-thumb);
     cursor: pointer;
-    border-radius: 50%;
-    border: none;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.password-controls #char-range::-webkit-slider-thumb:hover{
+    border: 2px solid var(--light-green);
+    background: var(--body-bg);
+}
+
+.password-controls #char-range::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+/////////// FOR MOZILLA BROWSWER ///////////////
+.password-controls #char-range::-moz-range-thumb {
+    -webkit-appearnace: none;
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--slider-thumb);
+    border-radius: 50%;
+    background: var(--slider-thumb);
+    cursor: pointer;
+}
+
+.password-controls #char-range::-moz-range-thumb:hover {
+    border: 2px solid var(--light-green);
+    background: var(--body-bg);
+}
+
+.password-controls #char-range::-moz-range-progress {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
 // .password-controls #char-range::-webkit-slider-thumb {
 //     width: 20px;
 //     height: 20px;
@@ -98,7 +140,7 @@
     background: var(--light-green);
 }
 
-
+////////////// CUSTOM CHECKBOXEX //////////////
 .password-controls .criterias {
     display: flex;
     flex-direction: column;
@@ -119,15 +161,62 @@
 .password-controls .criterias .secondcheck input,
 .password-controls .criterias .thirdcheck input,
 .password-controls .criterias .fourthcheck input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--light-green);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--strenth-check-bg);
+    border: 2px solid var(--light-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    // accent-color: var(--light-green);
 }
 
+.password-controls .criterias .firstcheck input::after,
+.password-controls .criterias .secondcheck input::after,
+.password-controls .criterias .thirdcheck input::after,
+.password-controls .criterias .fourthcheck input::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f00c";
+    color: var(--body-bg);
+    display: none;
+}
+
+.password-controls .criterias .firstcheck input:hover,
+.password-controls .criterias .secondcheck input:hover,
+.password-controls .criterias .thirdcheck input:hover,
+.password-controls .criterias .fourthcheck input:hover {
+    background: var(--card-bg);
+}
+
+.password-controls .criterias .firstcheck input:checked,
+.password-controls .criterias .secondcheck input:checked,
+.password-controls .criterias .thirdcheck input:checked,
+.password-controls .criterias .fourthcheck input:checked {
+    background: var(--light-green);
+}
+
+.password-controls .criterias .firstcheck input:checked::after,
+.password-controls .criterias .secondcheck input:checked::after,
+.password-controls .criterias .thirdcheck input:checked::after,
+.password-controls .criterias .fourthcheck input:checked::after {
+    display: block;
+}
+
+.password-controls .criterias .firstcheck label,
+.password-controls .criterias .secondcheck label,
+.password-controls .criterias .thirdcheck label,
+.password-controls .criterias .fourthcheck label {
+    font-size: 18.5px;
+}
 
 .password-controls .pwStrengthCheck {
     width: 100%;
-    height: 3rem;
+    height: 4.5rem;
     background: var(--strenth-check-bg);
     display: flex;
     justify-content: space-between;
@@ -135,38 +224,116 @@
     padding: 0 1.5rem;
 }
 
-.password-controls .pwStrengthCheck p{
-    height: 3rem;
+.password-controls .pwStrengthCheck > p{
+    height: 4.5rem;
     display: flex;
     align-items: center;
+    font-size: 16px;
+    font-weight: 500;
 }
 .password-controls .pwStrengthCheck .strChecker{
     display: flex;
-    width: 40%;
+    // width: 32%;
     // background: red;
-    height: 3rem;
+    height: 4.5rem;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
-.password-controls .pwStrengthCheck .strChecker label{
-    font-size: 20px;
+.password-controls .pwStrengthCheck .strChecker > p{
+    font-size: 23px;
+    font-weight: 500;
     color: var(--text-color);
-}
-.password-controls .pwStrengthCheck .strChecker input{
+    height: 3rem;
+    margin-bottom: 0;
     display: flex;
-    width: 4rem;
+    align-items: center;
 }
 
+.password-controls .pwStrengthCheck .strChecker .strengthbars{
+    display: flex;
+    gap: 7px;
+}
 
+.password-controls .pwStrengthCheck .strChecker .strengthbars .bar{
+    width: 10px;
+    height: 28px;
+    border: 2px solid var(--text-color);
+}
 
 
 .password-controls button {
     width: 100%;
-    height: 3.5rem;
+    height: 4rem;
     background: var(--light-green);
     font-family: "JetBrains Mono", monospace;
     font-weight: 500;
     font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 2px solid var(--light-green);
+}
+
+.password-controls button:hover{
+    color: var(--light-green);
+    background: var(--strenth-check-bg);
+}
+
+
+@media only screen and (max-width: 533px) {
+    .cardWrapper {
+        width: 22rem;
+    }
+
+    .password-controls .charlength p:first-child {
+        font-size: 15px;
+    }
+    .password-controls .charlength p:last-child {
+        font-size: 24px;
+    }
+
+    .password-controls .criterias {
+        gap: 14px;
+    }
+
+    .password-controls .criterias .firstcheck input,
+    .password-controls .criterias .secondcheck input,
+    .password-controls .criterias .thirdcheck input,
+    .password-controls .criterias .fourthcheck input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .password-controls .criterias .firstcheck label,
+    .password-controls .criterias .secondcheck label,
+    .password-controls .criterias .thirdcheck label,
+    .password-controls .criterias .fourthcheck label {
+        font-size: 15.5px;
+    }
+
+    .password-controls .pwStrengthCheck {
+        height: 3.5rem;
+    }
+
+    .password-controls .pwStrengthCheck > p{
+        font-size: 16px;
+        height: 3.5rem;
+    }
+
+    .password-controls .pwStrengthCheck .strChecker{
+        height: 3.5rem;
+    }
+
+    .password-controls .pwStrengthCheck .strChecker > p{
+        font-size: 17px;
+    }
+
+    .password-controls button {
+        height: 3.5rem;
+        font-size: 15px;
+    }
 }

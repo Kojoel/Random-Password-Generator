@@ -10,12 +10,16 @@
     --strength-check-range: #facf67;
     --text-color: #efeef4;
     --text-fade: #7b7986;
+    --dark-orange: #f64a4a;
+    --light-orange: #fb7c58;
+    --light-yellow: #f8cd65;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: .1s;
 }
 
 body{
